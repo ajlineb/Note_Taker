@@ -1,4 +1,5 @@
 const express = require('express');
+const { clog } = require('./middleware/clog');
 const { v4: uuidv4 } = require('uuid');
 const path = require('path');
 const data = require("./db/db.json");
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
+app.use(clog);
 
 
 
