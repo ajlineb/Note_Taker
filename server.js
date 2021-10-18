@@ -32,6 +32,24 @@ app.get('/api/notes', (req, res) => {
     res.json(data);
 })
 
+app.get('/api/notes/:id', (req, res) => {
+  if (req.params.id) {
+    console.info(`${req.method} request received to get a single a review`);
+    const noteID = req.params.id;
+    for (let i = 0; i < data.length; i++) {
+      const currentNote = data[i];
+      if (currentNote.noteId === noteID) {
+        res.status(200).json(currentNote);
+        console.log(currentNote);
+        return;
+      }
+    }
+    res.status(404).send('Note not found');
+  } else {
+    res.status(400).send('Note ID not provided');
+  }
+});
+
 //post request for api
 app.post('/api/notes', (req, res) => {
     console.log('Request Body:', req.body);
@@ -47,7 +65,7 @@ app.post('/api/notes', (req, res) => {
         const newNote = {
         title,
         text,
-        note_id: uuidv4(),
+        noteId: uuidv4(),
         };
 
         // Convert the data to a string so we can save it
@@ -70,7 +88,7 @@ app.post('/api/notes', (req, res) => {
             err
               ? console.error(err)
               : console.log(
-                  `Note for "${newNote.title}" has been written to JSON file with id "${newNote.note_id}" !`
+                  `Note for "${newNote.title}" has been written to JSON file with id "${newNote.noteId}" !`
                 )
           );
             };
@@ -87,6 +105,22 @@ app.post('/api/notes', (req, res) => {
         res.status(500).json('Error in posting Note!');
     }
 });
+
+// app.delete('/api/notes/:id', (req, res) => {
+//   if (req.params.id) {
+//     const noteID = req.params.id;
+//     console.log(noteID);
+//     for (let i = 0; i < data.length; i++) {
+//       const currentNote = data[i];
+//       if (currentNote.noteId === noteID) {
+        
+//       }
+//     }
+//     res.status(404).send('Note not found');
+//   } else {
+//     res.status(400).send('Note ID not provided');
+//   }
+// })
 
 //homepage/wildcard
 app.get('*', (req, res) =>
