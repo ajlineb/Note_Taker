@@ -180,4 +180,6 @@ if (window.location.pathname === '/notes') {
   noteText.addEventListener('keyup', handleRenderSaveBtn);
 }
 
-getAndRenderNotes();
+
+setInterval(getAndRenderNotes, 5000);  //to render as the user input
+getAndRenderNotes(); //for initial load

@@ -51,7 +51,7 @@ app.post('/api/notes', (req, res) => {
         };
 
         // Convert the data to a string so we can save it
-        const noteString = JSON.stringify(newNote);
+        //const noteString = JSON.stringify(newNote);
 
         // Write the string to a file
         fs.readFile(`./db/db.json`, 'utf8', (err, data) => {
@@ -70,7 +70,7 @@ app.post('/api/notes', (req, res) => {
             err
               ? console.error(err)
               : console.log(
-                  `Note for ${newNote.title} has been written to JSON file with id ${newNote.note_id} !`
+                  `Note for "${newNote.title}" has been written to JSON file with id "${newNote.note_id}" !`
                 )
           );
             };
