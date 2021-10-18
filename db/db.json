@@ -1,6 +1,16 @@
 [
-    {
-        "title":"Test Title",
-        "text":"Test text"
-    }
+  {
+    "title": "Test Title",
+    "text": "Test text"
+  },
+  {
+    "title": "note",
+    "text": "wwweeee",
+    "note_id": "a518e3e3-ed29-4566-b81a-8442fa63b96d"
+  },
+  {
+    "title": "Finish Homework Soon",
+    "text": "Finish by Tuesday!",
+    "note_id": "2691d7a9-5246-47af-a9a3-0f3b3547fdf8"
+  }
 ]
