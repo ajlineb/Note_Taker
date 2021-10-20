@@ -18,5 +18,15 @@
     "title": "Please render this note",
     "text": "Please!",
     "noteId": "100a9f19-4938-44a7-8648-a377c517d5a6"
+  },
+  {
+    "title": "Random note",
+    "text": "note",
+    "noteId": "4fe3f081-6f25-48fd-a7dc-12f777574c82"
+  },
+  {
+    "title": "New note",
+    "text": "Save",
+    "noteId": "449767d1-bdf5-4432-94c4-5aa9fcdb11a2"
   }
 ]
